@@ -28,6 +28,12 @@ jobs:
           npm install typescript@5.8.3
           npm install @capacitor/core @capacitor/android @capacitor/cli
 
+      - name: Prepare web assets
+        run: |
+          mkdir -p www
+          cp index.html www/index.html
+          cp manifest.json www/manifest.json
+
       - name: Create Android project
         run: npx cap add android
 
